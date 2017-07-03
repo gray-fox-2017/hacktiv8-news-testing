@@ -33,11 +33,11 @@ export default class News extends React.Component {
     this.setState({
       listNews: data,
     })
-    // console.log(this.state.listNews);
+    console.log(this.state.listNews);
   }
 
   componentWillMount () {
-    this.getData('US')
+    this.getData('indonesian')
   }
 
   render() {

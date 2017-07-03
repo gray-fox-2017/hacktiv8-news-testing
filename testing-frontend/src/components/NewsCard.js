@@ -20,7 +20,7 @@ export default class NewsCard extends React.Component {
             <p className="content">{this.props.news.lead_paragraph}</p>
           </div>
           <div className="card-action">
-            <a href="#">See More</a>
+            <a className="waves-effect waves-light btn" href={`${this.props.news.web_url}`} target="_blank">See More</a>
           </div>
         </div>
       </div>
