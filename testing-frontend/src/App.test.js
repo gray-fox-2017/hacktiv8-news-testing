@@ -6,16 +6,16 @@ import { shallow } from 'enzyme';
 describe('<App />', () => {
   const AppWrapper = shallow(<App />);
 
-  it('renders without crashing', () => {
+  it('should render without crashing', () => {
     expect(AppWrapper).toHaveLength(1);
   });
 
-  it('renders an <img> as a logo', () => {
+  it('should render an <img> as a logo', () => {
     const ImageLogo = AppWrapper.find('img');
     expect(ImageLogo).toHaveLength(1);
   });
 
-  it('renders an <h5> as a web title', () => {
+  it('should render an <h5> as a web title', () => {
     const ImageLogo = AppWrapper.find('h5');
     expect(ImageLogo).toHaveLength(1);
   });

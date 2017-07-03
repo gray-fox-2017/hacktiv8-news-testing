@@ -33,7 +33,7 @@ export default class News extends React.Component {
     this.setState({
       listNews: data,
     })
-    // console.log(this.state.listNews);
+    console.log(this.state.listNews);
   }
 
   componentWillMount () {
@@ -48,7 +48,7 @@ export default class News extends React.Component {
           <div className="row">
             { this.state.listNews.map(news => {
               return (
-                <NewsCard news={news} />
+                <NewsCard news={news} key={news._id}/>
               )
             })}
           </div>
