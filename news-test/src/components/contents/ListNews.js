@@ -14,7 +14,9 @@ const ListNews = (props) => {
               <Header as='h2'>{newInfo.title}</Header>
                 <p>{newInfo.description}</p>
                 <a href={newInfo.url}>{newInfo.url}</a> <br />
-                <small>{newInfo.author} || {newInfo.publishedAt}</small>
+              <small>{newInfo.author} || {newInfo.publishedAt}</small> <br />
+              <Button color='red' style={{margin:'10px'}}>Delete</Button>
+              <Button color='yellow' style={{margin:'10px'}}>Edit</Button>
               <Divider />
             </div>
           )

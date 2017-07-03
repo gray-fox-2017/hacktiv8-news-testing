@@ -4,9 +4,20 @@ import { Button,  Form } from 'semantic-ui-react'
 
 
 class AddNews extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      author: "",
+      title: "",
+      description: "",
+      url: "",
+      publishedAt: new Date()
+    }
+  }
+
   render(){
     return(
-      <Form>
+      <Form >
         <Form.Field>
           <label>Author</label>
           <input placeholder='Author' />

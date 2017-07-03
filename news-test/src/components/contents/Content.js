@@ -22,7 +22,7 @@ class Content extends Component {
           <Route path="/add-news" component={()=>{
             return(
               <div>
-                <AddNews />
+                <AddNews news={this.state.news}/>
               </div>
             )
           }}/>
