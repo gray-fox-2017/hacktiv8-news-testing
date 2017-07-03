@@ -10,7 +10,9 @@ export default class NewsCard extends React.Component {
               (<div className="image-wrapper">
                 <img src={`https://nytimes.com/${this.props.news.multimedia[0].url}`} alt="credit: NYT" />
               </div>) :
-              <img src="https://dummyimage.com/300x200" alt="no-pic"/>
+              (<div className="image-wrapper">
+                <img src="https://dummyimage.com/300x200" alt="no-pic"/>
+              </div>)
             }
             <h5 className="card-title">{this.props.news.headline.main}</h5>
           </div>

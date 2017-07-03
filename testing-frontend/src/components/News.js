@@ -25,7 +25,7 @@ export default class News extends React.Component {
         this.setData(latestNews);
       })
       .catch ((error) => {
-        console.log(error);
+        console.log('error');
       })
   }
 
@@ -33,7 +33,7 @@ export default class News extends React.Component {
     this.setState({
       listNews: data,
     })
-    console.log(this.state.listNews);
+    // console.log(this.state.listNews);
   }
 
   componentWillMount () {
@@ -56,7 +56,7 @@ export default class News extends React.Component {
       )
     }
     return (
-      <h3>Loading...</h3>
+      <h3 className="loading">Loading...</h3>
     )
   }
 }
