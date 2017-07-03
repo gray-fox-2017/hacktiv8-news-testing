@@ -29,5 +29,6 @@ describe('<Content /> Component ', ()=>{
     content.instance().getNews(newsResponse);
     const newsState = content.state('news');
     expect(newsState).toHaveLength(1)
-  })
+  });
+
 })

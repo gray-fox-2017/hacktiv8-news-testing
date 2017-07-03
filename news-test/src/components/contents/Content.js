@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Header, Divider } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import axios from 'axios';
+import { Route, Switch } from 'react-router-dom';
 
+import ListNews from './ListNews';
+import AddNews from './AddNews'
 
 class Content extends Component {
   constructor(){
@@ -10,20 +12,28 @@ class Content extends Component {
     this.state = {
       news : []
     }
+    this.getNews = this.getNews.bind(this)
   }
 
   render(){
     return(
       <div>
-        {this.state.news.map(newInfo => (
-          <div key={newInfo.publishedAt}>
-            <Header as='h2'>{newInfo.title}</Header>
-              <p>{newInfo.description}</p>
-              <a href={newInfo.url}>{newInfo.url}</a> <br />
-              <small>{newInfo.author} || {newInfo.publishedAt}</small>
-            <Divider />
-        </div>
-        ))}
+        <Switch>
+          <Route path="/add-news" component={()=>{
+            return(
+              <div>
+                <AddNews />
+              </div>
+            )
+          }}/>
+          <Route path="/" component={()=>{
+            return(
+              <div>
+                <ListNews news={this.state.news} />
+              </div>
+            )
+          }}/>
+        </Switch>
       </div>
     )
   }
