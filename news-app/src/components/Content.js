@@ -1,21 +1,22 @@
 import React from 'react'
+import { connect } from 'react-redux'
 // import { Form,FormGroup,Col,ControlLabel,FormControl,Checkbox,Button } from 'react-bootstrap';
 
 import NewsList from './NewsList'
 
-export default class Content extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      inputNews: '',
-    }
-  }
-
-  setInputNews(inputNews) {
-    this.setState({
-      inputNews,
-    })
-  }
+class Content extends React.Component {
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     inputNews: '',
+  //   }
+  // }
+  //
+  // setInputNews(inputNews) {
+  //   this.setState({
+  //     inputNews,
+  //   })
+  // }
 
   render() {
     return (
@@ -42,8 +43,13 @@ export default class Content extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    news: state.news,
+  };
+};
 
-
+export default connect(mapStateToProps, null)(Content);
 // <Form horizontal onSubmit={
 //   e => {
 //     e.preventDefault()
